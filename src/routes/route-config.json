@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/assets",
+    "view": "assets",
+    "routes": [
+      {
+        "path": "/assets/qiniu",
+        "view": "qiniu",
+        "title": "资源",
+        "routes": [
+          {
+            "path": "/assets/qiniu/detail",
+            "view": "detail",
+            "title": "文件详情",
+            "main": "assets/qiniu/detail/index.tsx"
+          },
+          {
+            "path": "/assets/qiniu/form",
+            "view": "form",
+            "title": "文件表单",
+            "main": "assets/qiniu/form/index.tsx"
+          }
+        ],
+        "main": "assets/qiniu/index.tsx"
+      },
+      {
+        "path": "/assets/aliyun",
+        "view": "aliyun",
+        "main": "assets/aliyun/index.tsx"
+      }
+    ]
+  },
+  {
+    "path": "/login",
+    "view": "login",
+    "main": "login/index.tsx"
+  }
+]

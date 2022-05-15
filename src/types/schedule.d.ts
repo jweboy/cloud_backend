@@ -1,0 +1,4 @@
+// enum SigninStatus {
+//   Not,
+//   Ok,
+// }

@@ -1,0 +1,4 @@
+src/**/*.d.ts
+build/
+
+src/routes/route-config.js
