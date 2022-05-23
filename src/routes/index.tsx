@@ -6,6 +6,7 @@
  */
 import NotFound from '@/components/NotFound';
 import SystemPrimaryLayout from '@/layout';
+import DeployPage from '@/pages/deploy';
 import LoginPage from '@/pages/login';
 import JuejinPage from '@/pages/schedule/juejin';
 import ColorPage from '@/pages/tools/color';
@@ -68,6 +69,7 @@ const AppRoutes = () => {
           <Route path="/tools/color" element={<ColorPage />} />
           <Route path="/tools/download" element={<DownloadPage />} />
           <Route path="/schedule/juejin" element={<JuejinPage />} />
+          <Route path="/deploy" element={<DeployPage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
       </Routes>

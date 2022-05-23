@@ -13,6 +13,7 @@ export interface CustomConfig {
 }
 
 export const BASE_URL = 'http://localhost:5001/api';
+// export const BASE_URL = 'http://jweboy.com:5001/api';
 
 // console.log(process.env.REACT_APP_API_URL);
 

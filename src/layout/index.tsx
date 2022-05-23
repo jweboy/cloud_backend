@@ -25,6 +25,7 @@ const SystemPrimaryLayout = React.memo(() => {
           style={{
             backgroundColor: 'var(--semi-color-fill-0)',
             height: 'calc(100vh - 60px)',
+            overflowY: 'auto',
           }}
         >
           <Outlet />

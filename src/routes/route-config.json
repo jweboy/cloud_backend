@@ -31,6 +31,11 @@
     ]
   },
   {
+    "path": "/deploy",
+    "view": "deploy",
+    "main": "deploy/index.tsx"
+  },
+  {
     "path": "/login",
     "view": "login",
     "main": "login/index.tsx"

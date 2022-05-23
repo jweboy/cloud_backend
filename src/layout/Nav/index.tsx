@@ -16,8 +16,12 @@ const SystemNavbar = React.memo(() => {
   return (
     <Nav
       className="h-full"
-      defaultOpenKeys={['tools']}
+      defaultOpenKeys={['tools', 'deploy', 'schedule']}
       items={[
+        {
+          text: '部署',
+          itemKey: 'deploy',
+        },
         // {
         //   text: '资源管理',
         //   itemKey: 'assets',
