@@ -10,11 +10,11 @@ import classnames from 'classnames';
 
 const BlockSpace: React.FC<{ className?: string }> = (props) => {
   const spaceClass = classnames({
-    'w-screen': true,
+    'w-full': true,
     [props.className!]: props.className,
   });
   return (
-    <Space className={spaceClass} {...props}>
+    <Space className={spaceClass} align="start" {...props}>
       {props.children}
     </Space>
   );

@@ -33,7 +33,13 @@
   {
     "path": "/deploy",
     "view": "deploy",
-    "main": "deploy/index.tsx"
+    "routes": [
+      {
+        "path": "/deployform",
+        "view": "form",
+        "main": "deploy/form.tsx"
+      }
+    ]
   },
   {
     "path": "/login",

@@ -7,13 +7,15 @@
 import NotFound from '@/components/NotFound';
 import SystemPrimaryLayout from '@/layout';
 import DeployPage from '@/pages/deploy';
+import DeployFormPage from '@/pages/deploy/form';
+import PublishProjectPage from '@/pages/deploy/publish';
 import LoginPage from '@/pages/login';
 import JuejinPage from '@/pages/schedule/juejin';
 import ColorPage from '@/pages/tools/color';
 import DownloadPage from '@/pages/tools/download';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import routes from './route-config.json';
+// import routes from './route-config.json';
 
 const basename = '/cloud';
 
@@ -69,7 +71,9 @@ const AppRoutes = () => {
           <Route path="/tools/color" element={<ColorPage />} />
           <Route path="/tools/download" element={<DownloadPage />} />
           <Route path="/schedule/juejin" element={<JuejinPage />} />
-          <Route path="/deploy" element={<DeployPage />} />
+          <Route path="deploy" element={<DeployPage />}></Route>
+          <Route path="deploy/form" element={<DeployFormPage />} />
+          <Route path="deploy/publish" element={<PublishProjectPage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
       </Routes>
