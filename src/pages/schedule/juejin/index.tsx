@@ -24,14 +24,23 @@ import { columns } from './columns';
 const JuejinPage = React.memo(() => {
   const { data } = useRequest({ request: getCheckinStatus });
   const { data: checkinList } = useRequest({ request: getCheckinList });
+  const formRef = React.useRef(null);
   const handleSubmit = async (values) => {
-    await postCheckin();
+    await postCheckin<{ cookie: string }>(values);
     // Toast.success('签到成功');
   };
   const isSignin = data.status === SigninStatus.Ok;
   const current = SIGNIN_STATUS[data.status] || {};
 
+  const getFormApi = (formApi) => (formRef.current = formApi);
+
   console.log('render: ', data);
+
+  React.useEffect(() => {
+    if (data.cookie != null) {
+      formRef.current?.setValue('cookie', data.cookie);
+    }
+  }, [data.cookie]);
 
   return (
     <React.Fragment>
@@ -50,11 +59,12 @@ const JuejinPage = React.memo(() => {
       )}
       <div className="mb-4">
         <Card title="掘金签到">
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} getFormApi={getFormApi}>
             <Form.TextArea
               label="cookie"
               field="cookie"
               placeholder="请输入cookie"
+              rows={8}
             />
             <Button htmlType="submit" type="primary" size="large" theme="solid">
               签到
