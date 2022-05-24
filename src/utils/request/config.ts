@@ -12,14 +12,15 @@ export interface CustomConfig {
   customError?: boolean;
 }
 
-export const BASE_URL = 'http://localhost:5001/api';
-// export const BASE_URL = 'http://jweboy.com:5001/api';
+let baseURL = process.env.REQUEST_BASE_URL;
 
-// console.log(process.env.REACT_APP_API_URL);
+if (process.env.ENV === 'dev') {
+  baseURL = 'http://localhost:5001/api';
+}
+export const BASE_URL = baseURL;
 
 export const config = {
-  // baseURL: process.env.REACT_APP_API_URL,
-  baseURL: BASE_URL,
+  baseURL,
   responseType: 'json',
   timeout: 3000, // 3s超时
   withCredentials: false, // 是否允许携带cookie
