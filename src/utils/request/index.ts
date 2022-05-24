@@ -63,6 +63,7 @@ instance.interceptors.response.use(
     }
 
     Toast.error(msg);
+    return Promise.reject(msg);
   },
   function respHander(err: AxiosError) {
     const { status } = err.response || {};
@@ -106,6 +107,7 @@ const request = <T, R = Response<T>>(config: RequestConfig) => {
       // message.error(err.message);
     }
 
+    // return Promise.reject(err);
     // pending 状态可以中断原 Promise 执行链，从而不再控制台抛出错误
     return new Promise(() => {});
   });
@@ -126,7 +128,7 @@ export const get = <T, R = Response<T>>(
 
 // post 请求函数
 export const post = async <T, R = Response<T>>(config: RequestConfig = {}) => {
-  const { contentType = 'form', ...restProps } = config;
+  const { contentType = 'json', ...restProps } = config;
 
   return request<T, R>({
     ...restProps,

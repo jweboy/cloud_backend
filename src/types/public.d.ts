@@ -47,3 +47,7 @@ declare namespace Public {
     component?: React.ReactElement;
   }
 }
+
+type RefObject<T> = React.RefObject<T>;
+
+type PlainObject = Record<string | symbol, any>;
