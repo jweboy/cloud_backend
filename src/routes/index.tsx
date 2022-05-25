@@ -14,7 +14,7 @@ import JuejinPage from '@/pages/schedule/juejin';
 import ColorPage from '@/pages/tools/color';
 import DownloadPage from '@/pages/tools/download';
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 // import routes from './route-config.json';
 
 const basename = '/cloud';
@@ -55,7 +55,7 @@ const AppRoutes = () => {
   // console.log(allRoutes);
 
   return (
-    <BrowserRouter basename={basename}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<SystemPrimaryLayout />}>
           {/* {allRoutes.map((item) => {
@@ -77,7 +77,7 @@ const AppRoutes = () => {
         </Route>
         <Route path="/login" element={<LoginPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
