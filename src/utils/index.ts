@@ -38,7 +38,7 @@ export const deepFirstTraverseNodes = <T>(
 };
 
 export const download = async (url: string, filename?: string) => {
-  const body = await fetch(url, { mode: 'no-cors' });
+  const body = await fetch(url);
   const data = await body.blob();
   const link = document.createElement('a');
   link.href = URL.createObjectURL(data);
